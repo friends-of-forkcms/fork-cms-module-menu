@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale>
+	<Backend>
+		<Menu>
+			<item type="label" name="AddMenu">
+				<translation language="nl"><![CDATA[menu toevoegen]]></translation>
+				<translation language="en"><![CDATA[add Menu]]></translation>
+			</item>
+			<item type="label" name="Alacarte">
+				<translation language="nl"><![CDATA[À la carte]]></translation>
+				<translation language="en"><![CDATA[À la carte]]></translation>
+			</item>
+			<item type="label" name="AddDish">
+				<translation language="nl"><![CDATA[gerecht toevoegen]]></translation>
+				<translation language="en"><![CDATA[add dish]]></translation>
+			</item>
+			<item type="label" name="Highlight">
+				<translation language="nl"><![CDATA[in de kijker]]></translation>
+				<translation language="en"><![CDATA[highlighted]]></translation>
+				<translation language="fr"><![CDATA[souligné]]></translation>
+			</item>
+			<item type="label" name="Starters">
+				<translation language="nl"><![CDATA[voorgerechten]]></translation>
+				<translation language="en"><![CDATA[starters]]></translation>
+				<translation language="fr"><![CDATA[entrées]]></translation>
+			</item>
+			<item type="label" name="MainCourses">
+				<translation language="nl"><![CDATA[hoofdgerechten]]></translation>
+				<translation language="en"><![CDATA[main courses]]></translation>
+				<translation language="fr"><![CDATA[plats principal]]></translation>
+			</item>
+			<item type="label" name="Desserts">
+				<translation language="nl"><![CDATA[nagerechten]]></translation>
+				<translation language="en"><![CDATA[desserts]]></translation>
+				<translation language="fr"><![CDATA[desserts]]></translation>
+			</item>
+			<item type="label" name="NumItems">
+				<translation language="nl"><![CDATA[Aantal gerechten]]></translation>
+				<translation language="en"><![CDATA[Number of dishes]]></translation>
+				<translation language="fr"><![CDATA[Nombre de plats]]></translation>
+			</item>
+		</Menu>
+		<Pages>
+			<item type="label" name="Alacarte">
+				<translation language="nl"><![CDATA[À la carte gerechten]]></translation>
+				<translation language="en"><![CDATA[À la carte dishes]]></translation>
+				<translation language="fr"><![CDATA[À la carte plats]]></translation>
+			</item>
+			<item type="label" name="Menus">
+				<translation language="nl"><![CDATA[Menu's]]></translation>
+				<translation language="en"><![CDATA[Menu's]]></translation>
+				<translation language="fr"><![CDATA[Menus]]></translation>
+			</item>
+		</Pages>
+		<Core>
+			<item type="label" name="Menu">
+				<translation language="nl"><![CDATA[Menu]]></translation>
+				<translation language="en"><![CDATA[Menu]]></translation>
+			</item>
+			<item type="label" name="MenuDetail">
+				<translation language="nl"><![CDATA[Menu detail]]></translation>
+				<translation language="en"><![CDATA[Menu detail]]></translation>
+			</item>
+			<item type="label" name="MenuCategory">
+				<translation language="nl"><![CDATA[Menu categorie]]></translation>
+				<translation language="en"><![CDATA[Menu category]]></translation>
+			</item>
+			<item type="message" name="NoCategories">
+				<translation language="en"><![CDATA[no categories]]></translation>
+				<translation language="nl"><![CDATA[geen categorieën]]></translation>
+			</item>
+		</Core>
+	</Backend>
+	<Frontend>
+		<Core>
+			<item type="label" name="Alacarte">
+				<translation language="nl"><![CDATA[À la carte]]></translation>
+				<translation language="en"><![CDATA[À la carte]]></translation>
+				<translation language="fr"><![CDATA[À la carte]]></translation>
+			</item>
+			<item type="label" name="Menus">
+				<translation language="nl"><![CDATA[Menu's]]></translation>
+				<translation language="en"><![CDATA[Menus]]></translation>
+				<translation language="fr"><![CDATA[Menus]]></translation>
+			</item>
+			<item type="label" name="HighlightedDescription">
+				<translation language="nl"><![CDATA[Geselecteerd door de chef]]></translation>
+				<translation language="en"><![CDATA[Selected by the chef]]></translation>
+				<translation language="fr"><![CDATA[Sélectionné par le chef]]></translation>
+			</item>
+		</Core>
+	</Frontend>
+</locale>
