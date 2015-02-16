@@ -76,12 +76,12 @@ class Model
     public static function deleteCategory($id)
     {
         $db = BackendModel::get('database');
-        $item = self::getCategory($id);
+        $item = self::existsCategory($id);
 
         if (!empty($item)) {
             $db->delete('meta', 'id = ?', array($item['meta_id']));
             $db->delete('menu_categories', 'id = ?', array((int) $id));
-            $db->update('menu', array('category_id' => null), 'category_id = ?', array((int) $id));
+            $db->update('menu_alacarte', array('category_id' => null), 'category_id = ?', array((int) $id));
         }
     }
 
@@ -458,6 +458,22 @@ class Model
 
         BackendModel::get('database')->update(
             'menu_categories', $item, 'id = ?', array($item['id'])
+        );
+    }
+
+    /**
+     * Get the number of items in a category
+     *
+     * @param $categoryId
+     * @return int Number of items in category
+     */
+    public static function getItemsInCategory($categoryId)
+    {
+        return (int) BackendModel::get('database')->getVar(
+            'SELECT COUNT(*)
+            FROM menu_alacarte
+            WHERE category_id = ?',
+            array((int) $categoryId)
         );
     }
 }

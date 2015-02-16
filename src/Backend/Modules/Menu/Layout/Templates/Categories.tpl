@@ -14,7 +14,7 @@
         {$dataGrid}
     </div>
 {/option:dataGrid}
-{option:!dataGrid}{$msgNoCategories}{/option:!dataGrid}
+{option:!dataGrid}{$msgNoCategories|ucfirst}{/option:!dataGrid}
 
 {include:{$BACKEND_CORE_PATH}/Layout/Templates/StructureEndModule.tpl}
 {include:{$BACKEND_CORE_PATH}/Layout/Templates/Footer.tpl}

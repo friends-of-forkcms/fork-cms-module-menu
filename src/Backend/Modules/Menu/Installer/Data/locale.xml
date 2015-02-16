@@ -69,6 +69,10 @@
 				<translation language="en"><![CDATA[no categories]]></translation>
 				<translation language="nl"><![CDATA[geen categorieën]]></translation>
 			</item>
+			<item type="message" name="EmptyCategoriesFirst">
+				<translation language="en"><![CDATA[Verwijder alle gerechten in de categorie voordat u deze kunt verwijderen.]]></translation>
+				<translation language="nl"><![CDATA[Remove all the dishes in the category before you can remove this.]]></translation>
+			</item>
 		</Core>
 	</Backend>
 	<Frontend>

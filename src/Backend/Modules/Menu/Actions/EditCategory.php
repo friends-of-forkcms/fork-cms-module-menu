@@ -75,6 +75,10 @@ class EditCategory extends ActionEdit
 
         // assign the data
         $this->tpl->assign('item', $this->record);
+
+        if (BackendMenuModel::getItemsInCategory($this->record['id']) == 0) {
+            $this->tpl->assign('emptyCategory', true);
+        }
     }
 
     /**

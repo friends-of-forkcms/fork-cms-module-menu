@@ -29,6 +29,7 @@
     </div>
 
     <div class="fullwidthOptions">
+        {option:emptyCategory}
         <a href="{$var|geturl:'delete_category'}&amp;id={$item.id}" data-message-id="confirmDelete" class="askConfirmation button linkButton icon iconDelete">
             <span>{$lblDelete|ucfirst}</span>
         </a>
@@ -37,6 +38,10 @@
                 {$msgConfirmDeleteCategory|sprintf:{$item.title}}
             </p>
         </div>
+        {/option:emptyCategory}
+        {option:!emptyCategory}
+            {$msgEmptyCategoriesFirst|ucfirst}
+        {/option:!emptyCategory}
 
         <div class="buttonHolderRight">
             <input id="editButton" class="inputButton button mainButton" type="submit" name="edit" value="{$lblSave|ucfirst}" />
