@@ -98,6 +98,8 @@ class Alacarte extends ActionIndex
     protected function parse()
     {
         // parse the dataGrid if there are results
-        $this->tpl->assign('dataGrids', $this->dataGrids);
+        if (isset($this->dataGrids)) {
+            $this->tpl->assign('dataGrids', $this->dataGrids);
+        }
     }
 }

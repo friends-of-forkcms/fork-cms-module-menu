@@ -29,5 +29,9 @@
 {/iteration:dataGrids}
 {/option:dataGrids}
 
+{option:!dataGrids}
+    <p>{$msgNoItems}</p>
+{/option:!dataGrids}
+
 {include:{$BACKEND_CORE_PATH}/Layout/Templates/StructureEndModule.tpl}
 {include:{$BACKEND_CORE_PATH}/Layout/Templates/Footer.tpl}
