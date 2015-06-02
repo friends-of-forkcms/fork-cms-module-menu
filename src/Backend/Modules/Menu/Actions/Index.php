@@ -48,7 +48,7 @@ class Index extends ActionIndex
         // reform date
         $this->dataGrid->setColumnFunction(
             array('Backend\Core\Engine\DataGridFunctions', 'getLongDate'),
-            array('[created_on]'), 'created_on', true
+            array('[edited_on]'), 'edited_on', true
         );
 
         // drag and drop sequencing

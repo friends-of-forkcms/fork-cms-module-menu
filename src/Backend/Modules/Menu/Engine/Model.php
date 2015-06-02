@@ -21,7 +21,7 @@ use Backend\Core\Engine\Language as BL;
 class Model
 {
     const QRY_DATAGRID_BROWSE =
-        'SELECT i.id, i.hidden, i.title, UNIX_TIMESTAMP(i.created_on) AS created_on, i.sequence
+        'SELECT i.id, i.hidden, i.title, UNIX_TIMESTAMP(i.edited_on) AS edited_on, i.sequence
          FROM menu AS i
          WHERE i.language = ?
          ORDER BY i.sequence';
@@ -35,7 +35,7 @@ class Model
          ORDER BY c.sequence ASC';
 
     const QRY_DATAGRID_BROWSE_ALACARTE =
-        'SELECT i.id, i.hidden, i.title, UNIX_TIMESTAMP(i.created_on) AS created_on, i.sequence, i.price
+        'SELECT i.id, i.hidden, i.title, UNIX_TIMESTAMP(i.edited_on) AS edited_on, i.sequence, i.price
          FROM menu_alacarte AS i
          WHERE i.language = ? AND category_id = ?
          ORDER BY i.sequence';
