@@ -2,23 +2,12 @@
 
 namespace Backend\Modules\Menu\Actions;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Backend\Core\Engine\Base\ActionAdd;
 use Backend\Core\Engine\Form;
 use Backend\Core\Engine\Language;
 use Backend\Core\Engine\Meta;
 use Backend\Core\Engine\Model;
 use Backend\Modules\Menu\Engine\Model as BackendMenuModel;
-use Backend\Modules\Search\Engine\Model as BackendSearchModel;
-use Backend\Modules\Tags\Engine\Model as BackendTagsModel;
-use Backend\Modules\Users\Engine\Model as BackendUsersModel;
-use Backend\Core\Engine\Language as BL;
 
 /**
  * This is the add-action, it will display a form to create a new item
@@ -48,14 +37,14 @@ class Add extends ActionAdd
     {
         $this->frm = new Form('add');
 
-        $this->frm->addText('title', null, null, 'inputText title', 'inputTextError title');
+        $this->frm->addText('title', null, null, 'form-control title', 'form-control danger title');
         $this->frm->addEditor('description');
         $this->frm->addEditor('price');
 
         // build array with options for the hidden Radiobutton
         $RadiobuttonHiddenValues[] = array('label' => Language::lbl('Hidden'), 'value' => 'Y');
         $RadiobuttonHiddenValues[] = array('label' => Language::lbl('Published'), 'value' => 'N');
-        $this->frm->addRadioButton('hidden', $RadiobuttonHiddenValues, 'N');
+        $this->frm->addRadiobutton('hidden', $RadiobuttonHiddenValues, 'N');
 
         // meta
         $this->meta = new Meta($this->frm, null, 'title', true);
@@ -76,7 +65,6 @@ class Add extends ActionAdd
         if ($url404 != $url) {
             $this->tpl->assign('detailURL', SITE_URL . $url);
         }
-        $this->record['url'] = $this->meta->getURL();
     }
 
     /**
@@ -92,7 +80,6 @@ class Add extends ActionAdd
 
             $fields['title']->isFilled(Language::err('FieldIsRequired'));
             $fields['description']->isFilled(Language::err('FieldIsRequired'));
-            //$fields['price']->isFilled(Language::err('InvalidInteger'));
 
             // validate meta
             $this->meta->validate();

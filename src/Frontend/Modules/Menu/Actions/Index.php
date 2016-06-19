@@ -2,15 +2,7 @@
 
 namespace Frontend\Modules\Menu\Actions;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Frontend\Core\Engine\Base\Block;
-use Frontend\Core\Engine\Model;
 use Frontend\Core\Engine\Navigation;
 use Frontend\Modules\Menu\Engine\Model as FrontendMenuModel;
 
@@ -63,7 +55,7 @@ class Index extends Block
 
         // set URL and limit
         $this->pagination['url'] = Navigation::getURLForBlock('Menu');
-        $this->pagination['limit'] = Model::getModuleSetting('Menu', 'overview_num_items', 10);
+        $this->pagination['limit'] = $this->get('fork.settings')->get($this->URL->getModule(), 'overview_num_items', 10);
 
         // populate count fields in pagination
         $this->pagination['num_items'] = FrontendMenuModel::getAllCount();

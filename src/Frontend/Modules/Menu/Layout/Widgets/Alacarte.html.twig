@@ -1,0 +1,29 @@
+{% if widgetMenuAlacarte %}
+    <div class="alacarte-holder">
+        <h3>{{ 'lbl.Alacarte'|trans|ucfirst }}</h3>
+
+        {% for item in widgetMenuAlacarte %}
+            <div class="alacarte menu-col-6">
+                <h4>{{ item.title }}</h4>
+                <ul class="cart-items">
+                    {% for item in item.items %}
+                        <li class="item">
+                            <div class="item-header">
+                                <div class="title">
+                                    {{ item.title }}
+                                    {% if item.highlight %}
+                                        <span class="master-tooltip" title="{{ 'lbl.HighlightedDescription'|trans }}"><i class="icon-highlighted" aria-hidden="true"></i></span>
+                                    {% endif %}
+                                </div>
+                                {% if item.price %}<div class="price">&euro; {{ item.price }}</div>{% endif %}
+                            </div>
+                            <div class="description">
+                                {{ item.description|raw }}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

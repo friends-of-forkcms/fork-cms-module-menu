@@ -1,0 +1,124 @@
+{% extends '/Layout/Templates/base.html.twig' %}
+
+{% block content %}
+
+    {% form edit %}
+        <div class="row fork-module-content">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="title" class="control-label">{{ 'lbl.Title'|trans|ucfirst }}</label>
+                    {% form_field_error title %} {% form_field title %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {# Main content #}
+            <div class="col-md-8">
+                <div class="panel panel-default panel-editor">
+                    <div class="panel-heading">
+                        <p>{{ 'lbl.Description'|trans|ucfirst }}
+                            <abbr data-toggle="tooltip" title="{{ 'lbl.RequiredField'|trans|ucfirst }}">*</abbr></p>
+                        {% form_field_error description %}
+                    </div>
+                    <div class="panel-body">
+                        {% form_field description %}
+                    </div>
+                </div>
+            </div>
+
+            {# Sidebar #}
+            <div class="col-md-4">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p>{{ 'lbl.Price'|trans|ucfirst }}</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <ul class="list-unstyled input-group">
+                                <div class="input-group-addon">€</div>
+                                {% form_field_error price %} {% form_field price %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p>{{ 'lbl.Status'|trans|ucfirst }}</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <ul class="list-unstyled">
+                                {% for item in hidden %}
+                                    <li class="radio">
+                                        <label for="{{ item.id }}">{{ item.rbtHidden|raw }} {{ item.label }}</label>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p>{{ 'lbl.MetaData'|trans|ucfirst }}</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="categoryId" class="control-label">{{ 'lbl.Category'|trans|ucfirst }}</label>
+                            {% form_field_error category_id %} {% form_field category_id %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row fork-module-actions">
+            <div class="col-md-12">
+                <div class="btn-toolbar">
+                    <div class="btn-group pull-left" role="group">
+                        {% if showMenuDeleteAlacarte %}
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete">
+                                <span class="fa fa-trash-o"></span>
+                                {{ 'lbl.Delete'|trans|ucfirst }}
+                            </button>
+                        {% endif %}
+                    </div>
+                    <div class="btn-group pull-right" role="group">
+                        <button id="editButton" type="submit" name="save" class="btn btn-primary">
+                            <span class="fa fa-check"></span>{{ 'lbl.Save'|trans|ucfirst }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if showMenuDeleteAlacarte %}
+            <div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="{{ 'lbl.Delete'|trans|ucfirst }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="modal-title h4">{{ 'lbl.Delete'|trans|ucfirst }}</span>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{ 'msg.ConfirmDelete'|trans|sprintf(item.title) }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <span class="fa fa-times"></span>{{ 'lbl.Cancel'|trans|ucfirst }}
+                            </button>
+                            <a href="{{ geturl('delete_alacarte' ) }}&amp;id={{ item.id }}" class="btn btn-danger">
+                                <span class="fa fa-trash"></span>{{ 'lbl.Delete'|trans|ucfirst }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    {% endform %}
+
+{% endblock %}

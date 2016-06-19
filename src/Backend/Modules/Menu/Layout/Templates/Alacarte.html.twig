@@ -1,0 +1,34 @@
+{% extends '/Layout/Templates/base.html.twig' %}
+
+{% block actionbar %}
+    <div class="btn-toolbar pull-right">
+        <div class="btn-group" role="group">
+            {{ macro.buttonIcon( geturl('add_alacarte'), 'plus-square', 'lbl.AddDish'|trans|ucfirst) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    {% if dataGrids %}
+        {% for dataGrid in dataGrids %}
+            <div class="dataGridHolder" id="dataGrid-{{ dataGrid.id }}">
+                <div class="tableHeading clearfix">
+                    <h3>{{ dataGrid.title }}</h3>
+                </div>
+                {% if dataGrid.content %}
+                    {{ dataGrid.content|raw }}
+                {% endif %}
+
+                {% if not dataGrid.content %}
+                    <p>{{ 'msg.NoItems'|trans }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if not dataGrids %}
+        <p>{{ 'msg.NoItems'|trans }}</p>
+    {% endif %}
+
+{% endblock %}

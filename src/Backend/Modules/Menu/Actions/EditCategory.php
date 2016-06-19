@@ -2,13 +2,6 @@
 
 namespace Backend\Modules\Menu\Actions;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Backend\Core\Engine\Base\ActionEdit;
 use Backend\Core\Engine\Form;
 use Backend\Core\Engine\Language;
@@ -63,7 +56,7 @@ class EditCategory extends ActionEdit
         $this->frm->addText('title', $this->record['title']);
 
         $this->meta = new Meta($this->frm, $this->record['meta_id'], 'title', true);
-        $this->meta->setUrlCallback('Backend\Modules\Menu\Engine\Model', 'getURLForCategory', array($this->record['id']));
+        $this->meta->setURLCallback('Backend\Modules\Menu\Engine\Model', 'getURLForCategory', array($this->record['id']));
     }
 
     /**

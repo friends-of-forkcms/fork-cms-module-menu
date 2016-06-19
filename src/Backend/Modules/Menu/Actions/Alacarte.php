@@ -2,13 +2,6 @@
 
 namespace Backend\Modules\Menu\Actions;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Backend\Core\Engine\Base\ActionIndex;
 use Backend\Core\Engine\Authentication;
 use Backend\Core\Engine\DataGridDB;
@@ -24,7 +17,7 @@ use Backend\Modules\Menu\Engine\Model as BackendMenuModel;
 class Alacarte extends ActionIndex
 {
     /**
-     * @var Array The datagrids
+     * @var array The datagrids
      */
     private $dataGrids;
 
@@ -54,7 +47,8 @@ class Alacarte extends ActionIndex
     /**
      * Load a datagrid
      *
-     * @param $categoryId int Category ID
+     * @param int $categoryId
+     * @param string $categoryName
      */
     protected function loadDataGrid($categoryId, $categoryName)
     {

@@ -2,13 +2,6 @@
 
 namespace Backend\Modules\Menu\Installer;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Backend\Core\Installer\ModuleInstaller;
 
 /**
@@ -106,21 +99,12 @@ class Installer extends ModuleInstaller
      *
      * @param string $language
      * @param string $title
-     * @param string $url
      * @return int
      */
     private function addCategory($language, $title)
     {
         // db
         $db = $this->getDB();
-
-        // get sequence for widget
-        $sequenceExtra = $db->getVar(
-            'SELECT MAX(i.sequence) + 1
-             FROM modules_extras AS i
-             WHERE i.module = ?',
-            array('menu')
-        );
 
         // build array
         $item['meta_id'] = $this->insertMeta($title, $title, $title, urlencode($title));

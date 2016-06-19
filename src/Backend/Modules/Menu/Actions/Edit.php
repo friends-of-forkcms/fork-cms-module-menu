@@ -2,13 +2,6 @@
 
 namespace Backend\Modules\Menu\Actions;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Backend\Core\Engine\Base\ActionEdit;
 use Backend\Core\Engine\Form;
 use Backend\Core\Engine\Language;
@@ -64,18 +57,18 @@ class Edit extends ActionEdit
         // create form
         $this->frm = new Form('edit');
 
-        $this->frm->addText('title', $this->record['title'], null, 'inputText title', 'inputTextError title');
+        $this->frm->addText('title', $this->record['title'], null, 'form-control title', 'form-control danger title');
         $this->frm->addEditor('description', $this->record['description']);
         $this->frm->addEditor('price', $this->record['price']);
 
         // build array with options for the hidden Radiobutton
         $RadiobuttonHiddenValues[] = array('label' => Language::lbl('Hidden'), 'value' => 'Y');
         $RadiobuttonHiddenValues[] = array('label' => Language::lbl('Published'), 'value' => 'N');
-        $this->frm->addRadioButton('hidden', $RadiobuttonHiddenValues, $this->record['hidden']);
+        $this->frm->addRadiobutton('hidden', $RadiobuttonHiddenValues, $this->record['hidden']);
 
         // meta
         $this->meta = new Meta($this->frm, $this->record['meta_id'], 'title', true);
-        $this->meta->setUrlCallBack('Backend\Modules\Menu\Engine\Model', 'getUrl', array($this->record['id']));
+        $this->meta->setURLCallback('Backend\Modules\Menu\Engine\Model', 'getUrl', array($this->record['id']));
     }
 
     /**
@@ -125,7 +118,6 @@ class Edit extends ActionEdit
                 $item['price'] = $fields['price']->getValue();
                 $item['hidden'] = $fields['hidden']->getValue();
                 $item['extra_id'] = $this->record['extra_id'];
-                //$item['sequence'] = BackendMenuModel::getMaximumSequence() + 1;
 
                 $item['meta_id'] = $this->meta->save();
 

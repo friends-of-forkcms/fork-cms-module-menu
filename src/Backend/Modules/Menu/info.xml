@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
 	<name>Menu</name>
-	<version>1.0.0</version>
+	<version>2.0.0</version>
 	<requirements>
-		<minimum_version>versionname</minimum_version>
+		<minimum_version>4.0.0</minimum_version>
 	</requirements>
 	<description>
 		<![CDATA[Menu module to create &amp; organize dishes and menu's.]]>
@@ -15,7 +15,7 @@
 		</author>
 	</authors>
 	<events>
-		<event application="backend" name="after_add"><![CDATA[Triggered when a Menu is added.]]></event>
+		<event applicawtion="backend" name="after_add"><![CDATA[Triggered when a Menu is added.]]></event>
 		<event application="backend" name="after_delete"><![CDATA[Triggered when a Menu is deleted.]]></event>
 		<event application="backend" name="after_edit"><![CDATA[Triggered when a Menu is edited.]]></event>
 		<event application="backend" name="after_saved_settings"><![CDATA[Triggered when settings are saved.]]></event>

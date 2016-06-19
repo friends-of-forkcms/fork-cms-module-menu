@@ -2,15 +2,7 @@
 
 namespace Frontend\Modules\Menu\Actions;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Frontend\Core\Engine\Base\Block;
-use Frontend\Core\Engine\Model;
 use Frontend\Core\Engine\Navigation;
 use Frontend\Modules\Menu\Engine\Model as FrontendMenuModel;
 
@@ -60,11 +52,6 @@ class Detail extends Block
      */
     protected function parse()
     {
-        /**
-         * @TODO add specified image
-         * $this->header->addOpenGraphImage(FRONTEND_FILES_URL . '/menu/images/source/' . $this->record['image']);
-         */
-
         // build Facebook  OpenGraph data
         $this->header->addOpenGraphData('title', $this->record['meta_title'], true);
         $this->header->addOpenGraphData('type', 'article', true);
@@ -75,7 +62,7 @@ class Detail extends Block
         );
         $this->header->addOpenGraphData(
             'site_name',
-            Model::getModuleSetting('core', 'site_title_' . FRONTEND_LANGUAGE, SITE_DEFAULT_TITLE),
+            $this->get('fork.settings')->get('Core', 'site_title_' . FRONTEND_LANGUAGE, SITE_DEFAULT_TITLE),
             true
         );
         $this->header->addOpenGraphData('description', $this->record['meta_title'], true);

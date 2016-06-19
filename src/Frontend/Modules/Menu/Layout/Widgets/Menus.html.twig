@@ -1,0 +1,32 @@
+{% if widgetMenus %}
+    <div class="menus-holder">
+        <div class="inner">
+            <h3>{{ 'lbl.Menus'|trans|trans|capitalize }}</h3>
+
+            <div class="menus" id="menu-overview">
+                {% if widgetMenus %}
+                    <ul class="menu-tabs">
+                        {% for widgetMenu in widgetMenus %}
+                            <li {% if widgetMenu.first %}class="active"{% endif %}><a href="#{{ widgetMenu.url }}"><i class="icon-angle-right" aria-hidden="true"></i> {{ widgetMenu.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="tab-content">
+                        {% for widgetMenu in widgetMenus %}
+                            <div class="tab-pane fade {% if widgetMenu.first %}in active{% endif %}" id="{{ widgetMenu.url }}">
+                                <div class="description">
+                                    {{ widgetMenu.description|raw }}
+                                </div>
+                                <div class="price">
+                                    {% if widgetMenu.price %}
+                                        {{ widgetMenu.price|raw }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}

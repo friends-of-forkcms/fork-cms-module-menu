@@ -6,14 +6,14 @@ The Fork CMS Menu module let's you create a menu for your restaurant. You can ad
 ## Preview
 Backend:
 
-[ ![Image](https://i.imgur.com/UNOSi33m.png "Backend") ](https://i.imgur.com/UNOSi33.png) 
-[![Image](http://i.imgur.com/nwPi9Jbm.png "Backend") ](http://i.imgur.com/nwPi9Jb.png) 
+[ ![Image](http://i.imgur.com/wMZIXKgm.png "Backend") ](http://i.imgur.com/wMZIXKg.png)
+[ ![Image](http://i.imgur.com/FkQHDO9m.png "Backend") ](http://i.imgur.com/FkQHDO9.png)
 
 Frontend example with additional css:
 
 [ ![Image](http://i.imgur.com/8n91wvKm.png "Backend") ](http://i.imgur.com/8n91wvK.png)
 
-You can see a live example [here](http://restaurant.woestyne.be/nl/menu) (a la carte).
+You can see a live example [here](https://restaurant.woestyne.be/nl/menu) (a la carte).
 
 ## Installation
 
@@ -29,3 +29,4 @@ If you encounter any bugs, please create an issue and I'll try to fix it (or fee
 ## Discussion
 - Twitter: [@jessedobbelaere](https://www.twitter.com/jessedobbelaere)
 - E-mail: <jesse@dobbelaere-ae.be> for any questions or remarks.
+- Slack: [Fork CMS Slack channel](https://fork-cms.herokuapp.com)

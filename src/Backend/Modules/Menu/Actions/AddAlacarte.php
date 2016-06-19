@@ -2,22 +2,12 @@
 
 namespace Backend\Modules\Menu\Actions;
 
-/*
- * This file is part of Fork CMS.
- *
- * For the full copyright and license information, please view the license
- * file that was distributed with this source code.
- */
-
 use Backend\Core\Engine\Base\ActionAdd;
 use Backend\Core\Engine\Form;
 use Backend\Core\Engine\Language;
 use Backend\Core\Engine\Meta;
 use Backend\Core\Engine\Model;
 use Backend\Modules\Menu\Engine\Model as BackendMenuModel;
-use Backend\Modules\Search\Engine\Model as BackendSearchModel;
-use Backend\Modules\Tags\Engine\Model as BackendTagsModel;
-use Backend\Modules\Users\Engine\Model as BackendUsersModel;
 
 /**
  * This is the add-action, it will display a form to create a new item
@@ -47,7 +37,7 @@ class AddAlacarte extends ActionAdd
     {
         $this->frm = new Form('add');
 
-        $this->frm->addText('title', null, null, 'inputText title', 'inputTextError title');
+        $this->frm->addText('title', null, null, 'form-control title', 'form-control danger title');
         $this->frm->addEditor('description');
         $this->frm->addText('price');
         $this->frm->addCheckbox('highlight');
@@ -55,7 +45,7 @@ class AddAlacarte extends ActionAdd
         // build array with options for the hidden Radiobutton
         $RadiobuttonHiddenValues[] = array('label' => Language::lbl('Hidden'), 'value' => 'Y');
         $RadiobuttonHiddenValues[] = array('label' => Language::lbl('Published'), 'value' => 'N');
-        $this->frm->addRadioButton('hidden', $RadiobuttonHiddenValues, 'N');
+        $this->frm->addRadiobutton('hidden', $RadiobuttonHiddenValues, 'N');
 
         // get categories
         $categories = BackendMenuModel::getCategories();
